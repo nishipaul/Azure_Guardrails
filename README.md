@@ -10,7 +10,7 @@ The existing files of "azure_guardrails.py" checks for content safety and gives 
 2. Pip install all the dependencies in the requirements.txt file.
 3. Open the file of azure_guardrail_enduser.ipynb which is calling the functions from azure_guardrails.py and run the cells to view the output
 4. For step by step example, follow the file - azure_guardrail_usage_example.ipynb
-
+5. Main files are - azure_guardrails.py and guardrails_pii.py (this is only for PII and is done without Azure. Detailed step for it is mentioned below.)
 
 
 
@@ -45,7 +45,7 @@ The GLiNER Small-v2.1 model, developed by Urchade, is a Named Entity Recognition
 * **Use Case**: Suitable for resource-constrained environments where traditional large models may be impractical
 
 
-## 🏗️ Architecture
+## Architecture
 
 ### Two-Stage PII Detection Workflow
 
