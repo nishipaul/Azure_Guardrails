@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardrails PII Detection Interface</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .info-box {
+            background-color: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .info-box h3 {
+            margin-top: 0;
+            color: #0066cc;
+        }
+        .example {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ Guardrails PII Detection Interface</h1>
+        
+        <div class="info-box">
+            <h3>About this Interface</h3>
+            <p>This interface allows you to test PII (Personally Identifiable Information) detection and LLM query processing. Enter a username and query to see how the system handles your request.</p>
+        </div>
+
+        <form method="post" action="/query-form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required placeholder="e.g., allinsale">
+                <small>This will be used to fetch the appropriate prompt template from Langfuse</small>
+            </div>
+
+            <div class="form-group">
+                <label for="label">Label:</label>
+                <input type="text" id="label" name="label" required placeholder="e.g., latest, general, shopping">
+                <small>This specifies which version of the prompt template to use from Langfuse</small>
+            </div>
+
+            <div class="form-group">
+                <label for="query">Your Query:</label>
+                <textarea id="query" name="query" required placeholder="Enter your question or request here..."></textarea>
+            </div>
+
+            <button type="submit">Process Query</button>
+        </form>
+
+        <div class="example">
+            <strong>Example:</strong><br>
+            Username: <code>allinsale</code><br>
+            Label: <code>latest</code><br>
+            Query: <code>Where can I find the product in the store of Kolkata?</code>
+        </div>
+    </div>
+</body>
+</html>

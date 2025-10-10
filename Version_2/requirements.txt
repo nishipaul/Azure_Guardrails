@@ -1,0 +1,11 @@
+python-dotenv
+langchain
+langchain-openai
+guardrails-ai[hub]
+azure-ai-contentsafety
+langfuse
+requests
+fastapi
+uvicorn[standard]
+jinja2
+python-multipart

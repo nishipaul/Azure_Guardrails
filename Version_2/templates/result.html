@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Result - Guardrails PII Detection</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .result-section {
+            margin-bottom: 30px;
+        }
+        .result-section h2 {
+            color: #555;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .input-info {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .result-box {
+            background-color: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+        }
+        .error-box {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: #721c24;
+        }
+        .success-box {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: #155724;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .back-button {
+            background-color: #6c757d;
+        }
+        .back-button:hover {
+            background-color: #545b62;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .status-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .status-error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ Query Result</h1>
+        
+        <div class="result-section">
+            <h2>Input Information</h2>
+            <div class="input-info">
+                <strong>Username:</strong> {{ username }}<br>
+                <strong>Label:</strong> {{ label }}<br>
+                <strong>Query:</strong> {{ query }}
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h2>Processing Result</h2>
+            {% if status == "success" %}
+                <div class="success-box">
+                    <span class="status-badge status-success">{{ status }}</span>
+                    <h3>Response:</h3>
+                    <div class="result-box">{{ result }}</div>
+                </div>
+            {% else %}
+                <div class="error-box">
+                    <span class="status-badge status-error">{{ status }}</span>
+                    <h3>Error:</h3>
+                    <div class="result-box">{{ result }}</div>
+                </div>
+            {% endif %}
+        </div>
+
+        <div style="text-align: center;">
+            <button onclick="window.location.href='/'" class="back-button">← Back to Query Form</button>
+            <button onclick="window.location.reload()">🔄 Try Again</button>
+        </div>
+    </div>
+</body>
+</html>

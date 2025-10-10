@@ -334,3 +334,13 @@ For issues and questions:
 3. Test with debug logging enabled
 4. Verify GuardRails dependencies are installed correctly
 
+
+
+# Useful Links
+
+* Guardrails AI GuardrailsPII guard - https://hub.guardrailsai.com/validator/guardrails/guardrails_pii
+* Guardrails AI DetectPII guard - https://hub.guardrailsai.com/validator/guardrails/detect_pii
+* Presidio PII entities by Microsoft and is used by Guardrails AI - https://microsoft.github.io/presidio/supported_entities/
+* PII via Azure AI Foundry (this is not used here since AI Foundry is not used) - https://learn.microsoft.com/en-us/azure/ai-services/language-service/personally-identifiable-information/quickstart?tabs=windows&pivots=ai-foundry-portal
+* Azure Content Safety SDK (Used here) - https://azure.github.io/azure-sdk-for-python/cognitiveservices.html#azure-ai-contentsafety
+
