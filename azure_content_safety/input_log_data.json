@@ -1,0 +1,151 @@
+[
+    {
+        "query_timestamp": {
+            "timestamp": "2025-10-31T08:41:02.112880",
+            "content_safety": {
+                "input_text": "This is a test query with potential issues",
+                "categories": {
+                    "Hate": 0,
+                    "SelfHarm": 0,
+                    "Sexual": 0,
+                    "Violence": 0
+                },
+                "time_taken": 1.6034858226776123
+            },
+            "sentiment_analysis": {
+                "input_text": "This is a test query with potential issues",
+                "sentiment_categories": {
+                    "positive": 0.03,
+                    "neutral": 0.95,
+                    "negative": 0.02,
+                    "overall_sentiment": "neutral"
+                },
+                "time_taken": 1.3541219234466553
+            },
+            "pii_check": {
+                "input_text": "This is a test query with potential issues",
+                "entities": [],
+                "pii_detected": false,
+                "pii_detected_count": 0,
+                "time_taken": 1.349640130996704
+            },
+            "pii_modify": {
+                "enabled": false
+            },
+            "prompt_injection": {
+                "input_text": "This is a test query with potential issues",
+                "detected": false,
+                "time_taken": 1.3679890632629395
+            },
+            "summary": {
+                "all_passed": true,
+                "failed_functions": []
+            }
+        }
+    },
+    {
+        "query_timestamp": {
+            "timestamp": "2025-10-31T08:44:59.733396",
+            "content_safety": {
+                "input_text": "i want to kill someone. call me at 555-555-5555",
+                "categories": {
+                    "Hate": 0,
+                    "SelfHarm": 0,
+                    "Sexual": 0,
+                    "Violence": 4
+                },
+                "time_taken": 1.2962450981140137,
+                "content_safety_detected": true,
+                "detected_categories": [
+                    "Violence"
+                ]
+            },
+            "sentiment_analysis": {
+                "input_text": "i want to kill someone. call me at 555-555-5555",
+                "sentiment_categories": {
+                    "positive": 0.03,
+                    "neutral": 0.04,
+                    "negative": 0.93,
+                    "overall_sentiment": "negative"
+                },
+                "time_taken": 1.3173151016235352,
+                "negative_sentiment_detected": true
+            },
+            "pii_check": {
+                "input_text": "i want to kill someone. call me at 555-555-5555",
+                "entities": [
+                    {
+                        "entity": "555-555-5555",
+                        "category": "PhoneNumber",
+                        "confidence_score": 0.8,
+                        "offset": 35,
+                        "length": 12
+                    }
+                ],
+                "pii_detected": true,
+                "pii_detected_count": 1,
+                "time_taken": 1.3165900707244873
+            },
+            "pii_modify": {
+                "enabled": false
+            },
+            "prompt_injection": {
+                "input_text": "i want to kill someone. call me at 555-555-5555",
+                "detected": false,
+                "time_taken": 1.2466261386871338
+            },
+            "summary": {
+                "all_passed": false,
+                "failed_functions": [
+                    "content_safety",
+                    "sentiment_analysis",
+                    "pii_check"
+                ]
+            }
+        }
+    },
+    {
+        "query_timestamp": {
+            "timestamp": "2025-10-31T08:46:03.369727",
+            "content_safety": {
+                "input_text": "i want to kill someone. call me at 555-555-5555",
+                "categories": {
+                    "Hate": 0,
+                    "SelfHarm": 0,
+                    "Sexual": 0,
+                    "Violence": 4
+                },
+                "time_taken": 1.223464012145996,
+                "content_safety_detected": true,
+                "detected_categories": [
+                    "Violence"
+                ]
+            },
+            "pii_check": {
+                "input_text": "i want to kill someone. call me at 555-555-5555",
+                "entities": [
+                    {
+                        "entity": "555-555-5555",
+                        "category": "PhoneNumber",
+                        "confidence_score": 0.8,
+                        "offset": 35,
+                        "length": 12
+                    }
+                ],
+                "pii_detected": true,
+                "pii_detected_count": 1,
+                "time_taken": 0.28958797454833984
+            },
+            "pii_modify": {
+                "enabled": false
+            },
+            "summary": {
+                "all_passed": false,
+                "failed_functions": [
+                    "content_safety",
+                    "pii_check"
+                ]
+            }
+        }
+    }
+]
